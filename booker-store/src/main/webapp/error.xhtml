@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+
+    Copyright (c), Eclipse Foundation, Inc. and its licensors.
+
+    All rights reserved.
+
+    This program and the accompanying materials are made available under the
+    terms of the Eclipse Distribution License v1.0, which is available at
+    https://www.eclipse.org/org/documents/edl-v10.php
+
+    SPDX-License-Identifier: BSD-3-Clause
+
+-->
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="jakarta.faces.facelets"
+    xmlns:h="jakarta.faces.html"
+    xmlns:f="jakarta.faces.core"
+    template="/template.xhtml"
+    xmlns:util="http://java.sun.com/jsf/composite/util"
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:define name="title">
+        Error Page
+    </ui:define>
+
+    <ui:define name="body">
+        <h2 style="color:red; border:0px">Sorry for the inconvenience but an unexpected error occurred:</h2>
+
+        <h4><strong>Error Message:</strong> #{exceptionMessage}</h4>
+
+        <a href="#" onmousedown="if(document.getElementById('mydiv').style.display == 'none'){ document.getElementById('mydiv').style.display = 'block'; }else{ document.getElementById('mydiv').style.display = 'none'; }">Show more details</a>
+
+        <br />
+        <div id="mydiv" style="border:1px solid black; display:none; background-color:lightgray;">            
+            <pre>
+#{exceptionTrace}
+            </pre>
+        </div>
+
+    </ui:define> 
+
+</ui:composition>

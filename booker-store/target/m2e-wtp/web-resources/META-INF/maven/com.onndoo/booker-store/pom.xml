@@ -34,6 +34,11 @@
 			<artifactId>booker-entities</artifactId>
       		<version>${project.version}</version>
     	</dependency>
+    	<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>booker-events</artifactId>
+      		<version>${project.version}</version>
+    	</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>booker-resources</artifactId>

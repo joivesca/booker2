@@ -31,5 +31,8 @@
   	<module>booker-resources</module>
   	<module>booker-store</module>
   	<module>booker-entities</module>
+  	<module>booker-events</module>
+  	<module>booker-payment</module>
+  	<module>booker-shipment</module>
   </modules>
 </project>
