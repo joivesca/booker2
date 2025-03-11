@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="jakarta.faces.facelets"
+    xmlns:h="jakarta.faces.html"
+    xmlns:f="jakarta.faces.core"
+    template="/template.xhtml"
+    xmlns:util="http://java.sun.com/jsf/composite/util"
+    xmlns:c="jakarta.tags.core">
+
+    <ui:define name="title">
+        Home
+    </ui:define>
+
+    <ui:define name="body">
+        <h:form>
+            <h2>#{bundle.Welcome_Msg}</h2> <br />
+            <c:choose id="wlcmsg">
+                
+                <c:when test="#{userController.authenticatedUser != null}">
+                    <h4>#{bundle.Welcome_Logged_User}</h4>
+                </c:when>              
+                
+                <c:otherwise>
+                    <h4>#{bundle.Welcome_Signup_Phrase} <h:commandLink action="customer/Create.xhtml" value="#{bundle.Welcome_Signup_Button}" /></h4>                
+                </c:otherwise>
+                
+            </c:choose>
+            <br />
+        </h:form>
+    </ui:define> 
+
+</ui:composition>

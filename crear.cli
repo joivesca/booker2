@@ -1,0 +1,18 @@
+module add --name=org.postgresql --resources=/home/joseph/Tools/Lib/postgresql-42.7.4.jar --dependencies=javax.api,javax.transaction.api
+
+#Registro de driver
+/subsystem=datasources/jdbc-driver=postgresql:add(driver-name="postgresql",driver-module-name="org.postgresql",driver-class-name=org.postgresql.Driver)
+
+#Start by creating the JDBC datasource
+
+/subsystem=datasources/data-source=PostgresqlDS:add(connection-url="jdbc:postgresql://localhost:5432/booker", jndi-name="java:/PostgresqlDS", driver-name=postgresql, user-name="booker", password="booker", use-java-context=true, enabled=true, min-pool-size=10, max-pool-size=100, pool-prefill=true)
+
+# Add the JDBC security realm creation
+/subsystem=elytron/jdbc-realm=booker-jdbc-realm:add(principal-query=[{sql="SELECT PASSWORD FROM PERSON WHERE EMAIL = ?", data-source="PostgresqlDS", simple-digest-mapper={algorithm=simple-digest-md5, password-index=1, hash-encoding=hex}},{sql="SELECT G.NAME FROM GROUPS G INNER JOIN PERSON_GROUPS PG ON G.ID = PG.GROUPS_ID INNER JOIN PERSON P ON P.EMAIL = PG.EMAIL WHERE P.EMAIL = ?", data-source="PostgresqlDS", attribute-mapping=[{index=1, to=Roles}]}])
+
+# Configure the servlet-security-quickstart security domain
+/subsystem=elytron/security-domain=booker-security-domain:add(default-realm=booker-jdbc-realm, realms=[{realm=booker-jdbc-realm}], permission-mapper=default-permission-mapper)
+
+# Configure Undertow's application security domain
+/subsystem=undertow/application-security-domain=booker-security:add(security-domain=booker-security-domain)
+/subsystem=ejb3/application-security-domain=booker-security:add(security-domain=booker-security-domain)

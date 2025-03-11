@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+	<persistence-unit name="primary"  transaction-type="JTA">
+		<!--<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+		<jta-data-source>java:/PostgresqlDS</jta-data-source>
+		<!--<jta-data-source>java:/Postgresql</jta-data-source>-->
+		
+<!-- 		<exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+<!-- 		<shared-cache-mode>NONE</shared-cache-mode> -->
+
+		<properties>
+			<property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" />
+			<property name="jakarta.persistence.schema-generation.create-source" value="script"/>
+			<property name="jakarta.persistence.schema-generation.create-script-source" value="META-INF/sql/create.sql" />
+        	<property name="jakarta.persistence.sql-load-script-source" value="META-INF/sql/data.sql" />
+        	<property name="jakarta.persistence.schema-generation.drop-source" value="script" />
+        	<property name="jakarta.persistence.schema-generation.drop-script-source" value="META-INF/sql/drop.sql" />
+			<!--<property name="jakarta.persistence.sql-load-script-source" value="META-INF/startup-script.sql" 
+				/> -->
+
+			<!-- for Glassfish/Payara/EclipseLink -->
+			<!-- <property name="eclipselink.logging.level" value="INFO" /> <property 
+				name="eclipselink.logging.level.sql" value="FINE" /> <property name="eclipselink.logging.parameters" 
+				value="true" /> -->
+			<!-- for WildFly/Hibernate -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>
