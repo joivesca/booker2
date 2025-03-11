@@ -7,7 +7,7 @@
 
 	<!-- Context root setting -->
 
-	<context-root>/booker</context-root>
+	<context-root>/booker-store</context-root>
 
 	<!-- Security role mappings -->
 

@@ -27,7 +27,7 @@ public class OrderJMSManager {
     @Inject
     private JMSContext context;
     
-    @Resource(mappedName = "java:global/jms/OrderQueue")
+    @Resource(mappedName = "java:/jms/queue/OrderQueue")
     private Queue queue;
     private QueueBrowser browser;
 

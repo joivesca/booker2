@@ -1,24 +1,45 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.onndoo</groupId>
-    <artifactId>booker2</artifactId>
-    <version>0.1-SNAPSHOT</version>
-  </parent>
-  <artifactId>booker-payment</artifactId>
-  <packaging>war</packaging>
-  <name>booker-payment</name>
-  
-  <dependencies>
-    	<dependency>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.onndoo</groupId>
+		<artifactId>booker2</artifactId>
+		<version>0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>booker-payment</artifactId>
+	<packaging>war</packaging>
+	<name>booker-payment</name>
+
+	<properties>
+		<compiler-plugin.version>3.13.0</compiler-plugin.version>
+		<war-plugin.version>3.4.0</war-plugin.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>booker-events</artifactId>
-      		<version>${project.version}</version>
-    	</dependency>
-  </dependencies>
-  
-  <build>
-  	<finalName>booker-payment</finalName>
-  </build>
-	
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>booker-payment</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${compiler-plugin.version}</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${war-plugin.version}</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>						
+		</plugins>
+	</build>
+
 </project>

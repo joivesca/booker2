@@ -12,12 +12,12 @@
 <!-- 		<shared-cache-mode>NONE</shared-cache-mode> -->
 
 		<properties>
-			<property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" />
-			<property name="jakarta.persistence.schema-generation.create-source" value="script"/>
-			<property name="jakarta.persistence.schema-generation.create-script-source" value="META-INF/sql/create.sql" />
-        	<property name="jakarta.persistence.sql-load-script-source" value="META-INF/sql/data.sql" />
-        	<property name="jakarta.persistence.schema-generation.drop-source" value="script" />
-        	<property name="jakarta.persistence.schema-generation.drop-script-source" value="META-INF/sql/drop.sql" />
+			<property name="jakarta.persistence.schema-generation.database.action" value="none" />
+<!-- 			<property name="jakarta.persistence.schema-generation.create-source" value="script"/> -->
+<!-- 			<property name="jakarta.persistence.schema-generation.create-script-source" value="META-INF/sql/create.sql" /> -->
+<!--         	<property name="jakarta.persistence.sql-load-script-source" value="META-INF/sql/data.sql" /> -->
+<!--         	<property name="jakarta.persistence.schema-generation.drop-source" value="script" /> -->
+<!--         	<property name="jakarta.persistence.schema-generation.drop-script-source" value="META-INF/sql/drop.sql" /> -->
 			<!--<property name="jakarta.persistence.sql-load-script-source" value="META-INF/startup-script.sql" 
 				/> -->
 

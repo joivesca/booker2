@@ -16,3 +16,5 @@ module add --name=org.postgresql --resources=/home/joseph/Tools/Lib/postgresql-4
 # Configure Undertow's application security domain
 /subsystem=undertow/application-security-domain=booker-security:add(security-domain=booker-security-domain)
 /subsystem=ejb3/application-security-domain=booker-security:add(security-domain=booker-security-domain)
+
+<jms-queue name="OrderQueue" entries="java:/jms/queue/OrderQueue"/>

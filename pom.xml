@@ -10,8 +10,7 @@
 	<project.report.sourceEncoding>UTF-8</project.report.sourceEncoding>
 	<maven.compiler.source>11</maven.compiler.source>
 	<maven.compiler.target>11</maven.compiler.target>
-	<jakartaee-api.version>10.0.0</jakartaee-api.version>
-	<postgresql.version>42.7.4</postgresql.version>
+	<jakartaee-api.version>10.0.0</jakartaee-api.version>	
   </properties>
   
   <dependencies>
@@ -20,12 +19,7 @@
 			<artifactId>jakarta.jakartaee-api</artifactId>
 			<version>${jakartaee-api.version}</version>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>${postgresql.version}</version>
-		</dependency>
+		</dependency>		
   </dependencies>
   <modules>
   	<module>booker-resources</module>

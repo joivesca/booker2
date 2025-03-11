@@ -28,6 +28,12 @@
         <servlet-name>FacesServlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>jakarta.ws.rs.core.Application</servlet-name>
+        <url-pattern>/services/*</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

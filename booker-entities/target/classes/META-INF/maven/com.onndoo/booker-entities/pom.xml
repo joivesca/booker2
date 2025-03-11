@@ -5,8 +5,19 @@
     <artifactId>booker2</artifactId>
     <version>0.1-SNAPSHOT</version>    
   </parent>
+  <name>booker-entities</name>
   <artifactId>booker-entities</artifactId>
   <packaging>jar</packaging>
   
-  <name>booker-entities</name>
+  <properties>	
+	<postgresql.version>42.7.4</postgresql.version>
+  </properties>
+  
+  <dependencies>		
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
+  </dependencies>
 </project>

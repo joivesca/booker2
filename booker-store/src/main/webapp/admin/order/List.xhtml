@@ -30,7 +30,7 @@
                     <ul class="commandButtons">
                         <li><h:commandLink action="#{customerOrderController.previous}" value="#{bundle.Previous} #{customerOrderController.pagination.pageSize}" rendered="#{customerOrderController.pagination.hasPreviousPage}"/></li>
                         <li><h:commandLink action="#{customerOrderController.next}" value="#{bundle.Next} #{customerOrderController.pagination.pageSize}" rendered="#{customerOrderController.pagination.hasNextPage}"/></li>
-                        <li><h:outputLink value="/dukes-shipment/admin/index.xhtml">${bundle.GoToShipment}</h:outputLink></li>
+                        <li><h:outputLink value="/booker-shipment/admin/index.xhtml">${bundle.GoToShipment}</h:outputLink></li>
                     </ul>
                     <h:dataTable value="#{customerOrderController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="firstRow, secondRow" rules="all" style="border:solid 1px">
                         <h:column>

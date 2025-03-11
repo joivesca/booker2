@@ -40,7 +40,7 @@ public class PaymentHandler implements IOrderHandler, Serializable {
 
     private static final Logger logger = Logger.getLogger(PaymentHandler.class.getCanonicalName());
     private static final long serialVersionUID = 4979287107039479577L;
-    private static final String ENDPOINT = "http://localhost:8080/dukes-payment/payment/pay";
+    private static final String ENDPOINT = "http://localhost:8080/booker-payment/payment/pay";
     @Inject
     @Paid
     Event<OrderEvent> eventManager;
