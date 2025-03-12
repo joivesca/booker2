@@ -17,7 +17,7 @@ import jakarta.jms.Queue;
 import jakarta.jms.QueueBrowser;
 
 @JMSDestinationDefinition(
-        name = "java:global/jms/OrderQueue",
+        name = "java:/jms/queue/OrderQueue",
         interfaceName = "jakarta.jms.Queue",
         destinationName = "PhysicalOrderQueue")
 @Stateless
